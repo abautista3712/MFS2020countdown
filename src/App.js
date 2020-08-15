@@ -1,9 +1,8 @@
 import React from "react";
+import Title from "./Components/Title";
 import Countdown from "./Components/Countdown";
-import Emoji from "./Components/Emoji";
+import ClickBtn from "./Components/ClickBtn";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
 // import logo from "./logo.svg";
 import "./App.css";
@@ -23,17 +22,9 @@ function App() {
         Your browser does not support the video tag.
       </video>
       <Container className="centerAlign">
-        <Row style={{ zIndex: "1" }}>
-          <Col>
-            <h1 style={{ textAlign: "center" }}>
-              {" "}
-              <Emoji symbol={"✈️"} label="airplane" />
-              Time Until Microsoft Flight Simulator 2020
-              <Emoji symbol={"✈️"} label="airplane" />
-            </h1>
-          </Col>
-        </Row>
+        <Title />
         <Countdown />
+        <ClickBtn />
       </Container>
     </div>
   );
