@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 
 const Title = () => {
   return (
-    <Row style={{ zIndex: "1" }}>
+    <Row className="overlay">
       <Col>
         <h1 style={{ textAlign: "center" }}>
           {" "}

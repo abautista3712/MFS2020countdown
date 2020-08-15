@@ -1,7 +1,8 @@
 import React from "react";
 import Title from "./Components/Title";
 import Countdown from "./Components/Countdown";
-import ClickBtn from "./Components/ClickBtn";
+import PreReleaseBtn from "./Components/PreReleaseBtn";
+import PostReleaseBtn from "./Components/PostReleaseBtn";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.css";
 // import logo from "./logo.svg";
@@ -21,10 +22,11 @@ function App() {
         />
         Your browser does not support the video tag.
       </video>
-      <Container className="centerAlign">
+      <Container className="centerAlign overlay">
         <Title />
         <Countdown />
-        <ClickBtn />
+        <PreReleaseBtn />
+        <PostReleaseBtn />
       </Container>
     </div>
   );
