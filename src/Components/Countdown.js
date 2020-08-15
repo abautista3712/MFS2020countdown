@@ -1,37 +1,53 @@
 import React, { useState } from "react";
+import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import moment from "moment";
 
 function Countdown() {
-  //   const [date] = useState(moment().format("LLL"));
-  //   const [currentDate, setCurrentDate] = useState(
-  //     moment().format("MMMM Do YYYY, h:mm:ss a")
-  //   );
   const currentDate = moment().unix();
   const releaseDate = 1597734000;
-  const [timeDiff, setTimeDiff] = useState();
+  const [timeDiff, setTimeDiff] = useState(0);
 
   const dayVal = Math.floor(timeDiff / 86400);
   const hourVal = Math.floor((timeDiff % 86400) / 3600);
   const minVal = Math.floor(((timeDiff % 86400) % 3600) / 60);
   const secVal = Math.floor(((timeDiff % 86400) % 3600) % 60);
 
-  //   const timeDiff = relea/seDate - currentDate;
   setTimeout(function () {
     setTimeDiff(releaseDate - currentDate);
   }, 1000);
 
   return (
-    <div>
-      {/* <h2>{currentDate}</h2>
-      <h2>{releaseDate}</h2>
-      <h2>{timeDiff}</h2> */}
-      <h2>Days{dayVal}</h2>
-      <h2>Hours{hourVal}</h2>
-      <h2>Min{minVal}</h2>
-      <h2>Sec{secVal}</h2>
-      {/* <h1>{console.log(releaseDate._d)}</h1> */}
-    </div>
+    <Row style={{ textAlign: "center" }}>
+      <Col>
+        <h2>
+          Days
+          <br />
+          {dayVal}
+        </h2>
+      </Col>
+      <Col>
+        <h2>
+          Hours
+          <br />
+          {hourVal}
+        </h2>
+      </Col>
+      <Col>
+        <h2>
+          Mins
+          <br />
+          {minVal}
+        </h2>
+      </Col>
+      <Col>
+        <h2>
+          Seconds
+          <br />
+          {secVal}
+        </h2>
+      </Col>
+    </Row>
   );
 }
 
