@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Button from "react-bootstrap/Button";
 
-const ClickBtn = () => {
+const PostReleaseBtn = () => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   let btnRef = useRef();
 
@@ -16,12 +16,12 @@ const ClickBtn = () => {
   };
 
   return (
-    <Button style={{ zIndex: "1" }} ref={btnRef} onClick={handleButtonClick}>
+    <Button className="overlay" ref={btnRef} onClick={handleButtonClick}>
       {isButtonClicked
         ? "Yeah, Kuya. Take that as a lesson!"
-        : "Click on Release"}
+        : "Hope you enjoy the game! Click Here!"}
     </Button>
   );
 };
 
-export default ClickBtn;
+export default PostReleaseBtn;
