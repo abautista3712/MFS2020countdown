@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 const PreReleaseBtn = () => {
   return (
     <Button variant="secondary" className="overlay" disabled>
-      -Click Here on Release Day-
+      Click Here on Release Day
     </Button>
   );
 };

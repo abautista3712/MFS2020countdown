@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Title from "./Components/Title";
 import Countdown from "./Components/Countdown";
 import PreReleaseBtn from "./Components/PreReleaseBtn";
@@ -6,9 +6,26 @@ import PostReleaseBtn from "./Components/PostReleaseBtn";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.css";
 // import logo from "./logo.svg";
+import moment from "moment";
 import "./App.css";
 
 function App() {
+  const [isReleaseDate, setIsReleaseDate] = useState(false);
+  const [timeDiff, setTimeDiff] = useState(0);
+
+  const releaseDate = 1597734000;
+  const currentDate = moment().unix();
+
+  useEffect(() => {
+    if (timeDiff < 0) {
+      setIsReleaseDate(true);
+    }
+  }, [timeDiff]);
+
+  setTimeout(function () {
+    setTimeDiff(releaseDate - currentDate);
+  }, 1000);
+
   return (
     <div>
       <video
@@ -25,8 +42,7 @@ function App() {
       <Container className="centerAlign overlay">
         <Title />
         <Countdown />
-        <PreReleaseBtn />
-        <PostReleaseBtn />
+        {isReleaseDate ? <PostReleaseBtn /> : <PreReleaseBtn />}
       </Container>
     </div>
   );

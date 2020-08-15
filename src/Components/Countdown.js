@@ -4,8 +4,8 @@ import Col from "react-bootstrap/Col";
 import moment from "moment";
 
 function Countdown() {
-  const currentDate = moment().unix();
   const releaseDate = 1597734000;
+  const currentDate = moment().unix();
   const [timeDiff, setTimeDiff] = useState(0);
 
   const dayVal = Math.floor(timeDiff / 86400);

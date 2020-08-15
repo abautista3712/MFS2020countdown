@@ -12,7 +12,6 @@ const PostReleaseBtn = () => {
       btnRef.current.setAttribute("disabled", "disabled");
       btnRef.current.setAttribute("style", "background:grey");
     }
-    console.log(isButtonClicked);
   };
 
   return (
