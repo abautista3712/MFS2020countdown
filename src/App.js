@@ -32,6 +32,7 @@ function App() {
         style={{ position: "absolute", minHeight: "100%", minWidth: "100%" }}
         loop
         autoPlay
+        muted
       >
         <source
           src="https://assets.mixkit.co/videos/preview/mixkit-hyperlapse-of-a-cloudy-sky-1766-large.mp4"
